@@ -1,0 +1,11 @@
+/N/u/brlife/git/jsonlab
+commit 474d8c824800b5f2109c08f989085cb961acdbe3
+Merge: ae7a5d9 38b24fb
+Author: Qianqian Fang <fangqq@gmail.com>
+Date:   Wed Sep 6 13:01:57 2017 -0400
+
+    Merge pull request #41 from dasantonym/master
+    
+    added package.json to be able to intall via npm package manager
+/N/u/brlife/git/NIfTI
+pwd

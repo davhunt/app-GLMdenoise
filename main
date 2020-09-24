@@ -1,0 +1,11 @@
+#!/bin/bash
+#PBS -l nodes=1:ppn=12,vmem=120gb,walltime=96:00:00
+#PBS -N GLMdenoise
+#PBS -V
+
+fmri=$(jq -r .fmri[] config.json)
+events=$(jq -r .events[] config.json)
+
+mkdir -p denoised_bold
+
+time singularity exec -e docker://brainlife/mcr:r2019a ./compiled/main

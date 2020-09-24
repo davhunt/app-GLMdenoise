@@ -1,0 +1,14 @@
+{
+    "fmri": [
+        "testdata/sub-10_ses-SSSES_task-identification_run-1_bold.nii.gz",
+        "testdata/sub-10_ses-SSSES_task-identification_run-2_bold.nii.gz",
+        "testdata/sub-10_ses-SSSES_task-identification_run-3_bold.nii.gz",
+        "testdata/sub-10_ses-SSSES_task-identification_run-4_bold.nii.gz"
+    ],
+    "events": [
+        "testdata/sub-10_ses-SSSES_task-identification_run-1_events.tsv",
+        "testdata/sub-10_ses-SSSES_task-identification_run-2_events.tsv",
+        "testdata/sub-10_ses-SSSES_task-identification_run-3_events.tsv",
+        "testdata/sub-10_ses-SSSES_task-identification_run-4_events.tsv"
+    ]
+}
