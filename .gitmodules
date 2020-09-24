@@ -1,0 +1,3 @@
+[submodule "GLMdenoise"]
+	path = GLMdenoise
+	url = https://github.com/kendrickkay/GLMdenoise
