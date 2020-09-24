@@ -4,7 +4,7 @@ if ~isdeployed
 	disp('loading paths for IUHPC')
 	addpath(genpath('/N/u/brlife/git/jsonlab'))
         addpath(genpath('/N/u/brlife/git/NIfTI'))
-        addpath(genpath(pwd));
+        addpath(genpath('GLMdenoise'));
 end
 
 % load config.json
