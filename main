@@ -3,7 +3,7 @@
 #PBS -N GLMdenoise
 #PBS -V
 
-fmri=$(jq -r .fmri[] config.json)
+fmri=$(jq -r .bold[] config.json)
 events=$(jq -r .events[] config.json)
 
 mkdir -p denoised_bold

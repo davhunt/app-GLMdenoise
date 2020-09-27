@@ -11,6 +11,6 @@ end
 config = loadjson('config.json');
 
 % run GLMdenoise
-runGLMdenoise(config.fmri, config.events);
+runGLMdenoise(config.bold, config.events);
 
 end

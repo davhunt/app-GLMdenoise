@@ -9,8 +9,8 @@ Date:   Wed Sep 6 13:01:57 2017 -0400
     added package.json to be able to intall via npm package manager
 /N/u/brlife/git/NIfTI
 GLMdenoise
-commit 1eb4668e90bace7c1ed53550eea77f8617c0cc64
+commit fe068a5222fa659cbbd696534817321eaf46df38
 Author: David Hunt <davhunt@indiana.edu>
-Date:   Thu Sep 24 17:59:38 2020 -0400
+Date:   Thu Sep 24 18:23:53 2020 -0400
 
-    add GLMdenoise submodule
+    add GLMdenoise on matlab path
