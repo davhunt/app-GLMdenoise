@@ -6,6 +6,16 @@
 fmri=$(jq -r .bold[] config.json)
 events=$(jq -r .events[] config.json)
 
-mkdir -p denoised_bold
+# create output directories for each run
+for i in $(seq 1 $(echo ${fmri} | wc -w)); do
+  mkdir -p denoised_bold/run${i}
+done
+
+# copy each events.tsv to respective folder
+i=1
+for tsv in ${events}; do
+  cp ${tsv} denoised_bold/run${i}/events.tsv
+  ((i++))
+done
 
 time singularity exec -e docker://brainlife/mcr:r2019a ./compiled/main

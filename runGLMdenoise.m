@@ -68,7 +68,7 @@ hrf = getcanonicalhrf(0.1, tr)';
 for ii = 1:size(denoiseddata,2)
   niis{ii}.hdr.dime.datatype = 16; niis{ii}.hdr.dime.bitpix = 32;
   niis{ii}.img = denoiseddata{ii};
-  save_untouch_nii(niis{ii},sprintf('denoised_bold/run%d_denoised_bold.nii.gz',ii))
+  save_untouch_nii(niis{ii},sprintf('denoised_bold/run%d/bold.nii.gz',ii))
 end
 
 
