@@ -7,6 +7,8 @@ This app uses the [GLMdenoise toolbox](https://github.com/kendrickkay/GLMdenoise
 
 GLMdenoise derives noise regressors on multiple runs of tfMRI data using principal component analysis (PCA) and regresses these out, resulting in a higher signal-to-noise ratio for voxels related to the experimental paradigm/task. At least two fMRI runs, with conditions repeated across runs, are required. Also required are the stimuli events, timings, and durations for each task fMRI run in the form of a "events.tsv" file that should accompany the inputted fMRI bold.nii.gz.
 
+GLMdenoise is most effective on event-related fMRI.
+
 See [this page](http://kendrickkay.net/GLMdenoise/) and [this publication](https://www.frontiersin.org/articles/10.3389/fnins.2013.00247/full) for details on GLMdenoise.
 
 ### Authors
@@ -33,6 +35,18 @@ We kindly ask that you cite the following articles when publishing papers and co
 
 #### MIT Copyright (c) 2020 brainlife.io The University of Texas at Austin and Indiana University
 
+## Constructing the events.tsv files
+
+An events.tsv (see [here])(https://bids-specification.readthedocs.io/en/stable/04-modality-specific-files/05-task-events.html) is a file in the BIDS specification that specifies what stimuli were presented, and when, when the corresponding task fMRI was collected. The events.tsv must contain the "onset," "duration," (both in seconds) and "trial type" columns for each trial presented in the task. Each tfMRI run submitted should must have an events.tsv.
+
+For example if a task consisted of two trial types both presented for 1 second the events.tsv might look like:
+```
+onset	duration	trial type
+2.069	1.0	trial1
+4.275	1.0	trial2
+8.283	1.0	trial1
+14.918	1.0	trial2
+```
 
 ## Running the App 
 
