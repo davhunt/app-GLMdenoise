@@ -33,6 +33,8 @@ We kindly ask that you cite the following articles when publishing papers and co
 
 2.  Charest, I., Kriegeskorte, N., & Kay, K. N. (2018). GLMdenoise improves multivariate pattern analysis of fMRI data. NeuroImage, 183, 606-616. [https://doi.org/10.1016/j.neuroimage.2018.08.064](https://doi.org/10.1016/j.neuroimage.2018.08.064)
 
+3. Avesani, P., McPherson, B., Hayashi, S. et al. The open diffusion data derivatives, brain data upcycling via integrated publishing of derivatives and reproducible open cloud services. Sci Data 6, 69 (2019). [https://doi.org/10.1038/s41597-019-0073-y](https://doi.org/10.1038/s41597-019-0073-y)
+
 #### MIT Copyright (c) 2020 brainlife.io The University of Texas at Austin and Indiana University
 
 ## Constructing the events.tsv files
