@@ -3,6 +3,39 @@
 
 # GLMdenoise for denoising task fMRI data
 
+<!-- brainlife-app:begin (generated from the App manifest; edit the manifest, not this block) -->
+
+> **Denoises task fMRI runs with the GLMdenoise toolbox (compiled MATLAB), deriving PCA noise regressors across runs from BIDS events.tsv designs, and outputs denoised BOLD runs.**
+
+Builds a design matrix from each run's events.tsv (onset, duration, trial_type), assumes a canonical HRF at the data TR, and runs GLMdenoisedata, which uses cross-validated PCA noise regressors to increase signal-to-noise for task-related voxels. Use it on event-related task fMRI with conditions repeated across at least two runs. Each run needs its own events.tsv; the GLM results are saved to results.mat.
+
+| | |
+|---|---|
+| 📥 **Inputs** | `neuro/func/task` |
+| 📤 **Outputs** | `neuro/func/task` |
+| 🐳 **Container** | `brainlife/mcr:r2019a` |
+| ⚙️ **Resources** | 12 CPUs · 90 GB memory · 1 h walltime |
+| 🔗 **Run it** | [doi.org/10.25663/brainlife.app.451](https://doi.org/10.25663/brainlife.app.451) |
+
+#### 📥 Inputs
+
+| Input | Datatype | Required | Description |
+|---|---|---|---|
+| `fmri` | `neuro/func/task` | yes | fMRI runs must have conditions repeated across runs. Must have an events.tsv associated with each run specifying onset times and durations of stimuli |
+
+#### 📤 Outputs
+
+| Output | Datatype | Description |
+|---|---|---|
+| `denoised_bold/run1` | `neuro/func/task` | Denoised BOLD of the first run (bold.nii.gz, float32) with its events.tsv; further runs are written to denoised_bold/runN. |
+
+📚 **References used by this App:**
+- Kay K, Rokem A, Winawer J, Dougherty R, Wandell B. GLMdenoise: a fast, automated technique for denoising task-based fMRI data. Front Neurosci 7:247 (2013). [doi:10.3389/fnins.2013.00247](https://doi.org/10.3389/fnins.2013.00247)
+- Charest I, Kriegeskorte N, Kay KN. GLMdenoise improves multivariate pattern analysis of fMRI data. NeuroImage 183:606-616 (2018). [doi:10.1016/j.neuroimage.2018.08.064](https://doi.org/10.1016/j.neuroimage.2018.08.064)
+- Avesani P, et al. The open diffusion data derivatives, brain data upcycling via integrated publishing of derivatives and reproducible open cloud services. Sci Data 6:69 (2019). [doi:10.1038/s41597-019-0073-y](https://doi.org/10.1038/s41597-019-0073-y)
+
+<!-- brainlife-app:end -->
+
 This app uses the [GLMdenoise toolbox](https://github.com/kendrickkay/GLMdenoise) to denoise and analyze task-based fMRI data.
 
 GLMdenoise derives noise regressors on multiple runs of tfMRI data using principal component analysis (PCA) and regresses these out, resulting in a higher signal-to-noise ratio for voxels related to the experimental paradigm/task. At least two fMRI runs, with conditions repeated across runs, are required. Also required are the stimuli events, timings, and durations for each task fMRI run in the form of a "events.tsv" file that should accompany the inputted fMRI bold.nii.gz.
